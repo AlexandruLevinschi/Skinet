@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Skinet.Core.Entities;
 using Skinet.Core.Interfaces;
 
-namespace Skinet.Infrastructure.Data
+namespace Skinet.Infrastructure.Data.Repositories
 {
     public class ProductRepository : IProductRepository
     {
