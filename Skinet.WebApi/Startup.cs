@@ -31,6 +31,16 @@ namespace Skinet.WebApi
 
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .WithOrigins("https://localhost:4200");
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,6 +54,8 @@ namespace Skinet.WebApi
             app.UseRouting();
 
             app.UseStaticFiles();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
