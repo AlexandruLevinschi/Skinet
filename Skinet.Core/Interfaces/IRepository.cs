@@ -14,5 +14,7 @@ namespace Skinet.Core.Interfaces
         Task<T> GetEntityWithSpecAsync(ISpecification<T> specification);
 
         Task<IReadOnlyList<T>> ListAsync(ISpecification<T> specification);
+
+        Task<int> CountAsync(ISpecification<T> specification);
     }
 }
